@@ -20,7 +20,7 @@
     <scm>
         <url>https://github.com/pgjdbc/pgjdbc-parent-poms</url>
         <connection>scm:git:https://github.com/pgjdbc/pgjdbc-parent-poms.git</connection>
-        <developerConnection>scm:git:https://github.com/pgjdbc/pgjdbc-parent-poms.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:pgjdbc/pgjdbc-parent-poms.git</developerConnection>
     </scm>
 
 </project>
