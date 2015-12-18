@@ -8,8 +8,9 @@
     </parent>
 
     <artifactId>pgjdbc-core-prevjre</artifactId>
-    <name>PostgreSQL JDBC Driver - skeleton pom for old jre</name>
     <packaging>pom</packaging>
+    <name>PostgreSQL JDBC Driver - skeleton pom for old jre</name>
+    <description>Build configuration to produce jar for previous Java versions</description>
 
     <properties>
         <!-- By default, pgjdbc-jreX is supposed to be checked out under main pgjdbc clone (for ease of development).

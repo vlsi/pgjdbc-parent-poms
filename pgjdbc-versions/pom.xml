@@ -3,9 +3,11 @@
 
     <groupId>org.postgresql</groupId>
     <artifactId>pgjdbc-versions</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <name>PostgreSQL JDBC Driver - superpom</name>
     <packaging>pom</packaging>
+    <name>PostgreSQL JDBC Driver - superpom</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <description>Sets up base plugin configuration and dependency versions</description>
+    <url>https://github.com/pgjdbc/pgjdbc-parent-poms</url>
 
     <licenses>
         <license>
@@ -36,7 +38,18 @@
             <id>ringerc</id>
             <name>Craig Ringer</name>
         </developer>
+        <developer>
+            <id>vlsi</id>
+            <name>Vladimir Sitnikov</name>
+        </developer>
     </developers>
+
+    <!-- If inherited from parent pom, maven tries to add artifactId to URLs -->
+    <scm>
+        <url>https://github.com/pgjdbc/pgjdbc-parent-poms</url>
+        <connection>scm:git:https://github.com/pgjdbc/pgjdbc-parent-poms.git</connection>
+        <developerConnection>scm:git:git@github.com:pgjdbc/pgjdbc-parent-poms.git</developerConnection>
+    </scm>
 
     <distributionManagement>
         <snapshotRepository>

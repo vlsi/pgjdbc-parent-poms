@@ -8,8 +8,9 @@
     </parent>
 
     <artifactId>pgjdbc-core-parent</artifactId>
-    <name>PostgreSQL JDBC Driver - build skeleton pom</name>
     <packaging>pom</packaging>
+    <name>PostgreSQL JDBC Driver - build skeleton pom</name>
+    <description>PgJDBC build configuration for highest supported Java</description>
 
     <properties>
         <template.default.pg.port>5432</template.default.pg.port>

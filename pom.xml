@@ -7,8 +7,9 @@
     </parent>
 
     <artifactId>pgjdbc-parent-aggregate</artifactId>
-    <name>PostgreSQL JDBC Driver - parent poms aggregate</name>
     <packaging>pom</packaging>
+    <name>PostgreSQL JDBC Driver - parent poms aggregate</name>
+    <description>Aggregate project of PgJDBC parent poms</description>
 
     <modules>
         <module>pgjdbc-versions</module>
