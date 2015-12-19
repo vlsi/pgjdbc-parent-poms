@@ -2,6 +2,7 @@
 # Parent poms for PostgreSQL JDBC driver
 
 [![Build Status](https://travis-ci.org/pgjdbc/pgjdbc-parent-poms.png)](https://travis-ci.org/pgjdbc/pgjdbc-parent-poms)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.postgresql/pgjdbc-versions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.postgresql/pgjdbc-versions)
 
 This repository includes maven parent poms that are used by PostgreSQL JDBC driver.
 
