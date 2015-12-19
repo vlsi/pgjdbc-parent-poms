@@ -2,7 +2,7 @@
     <parent>
         <groupId>org.postgresql</groupId>
         <artifactId>pgjdbc-versions</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <relativePath>pgjdbc-versions</relativePath>
     </parent>
 
@@ -22,6 +22,7 @@
         <url>https://github.com/pgjdbc/pgjdbc-parent-poms</url>
         <connection>scm:git:https://github.com/pgjdbc/pgjdbc-parent-poms.git</connection>
         <developerConnection>scm:git:git@github.com:pgjdbc/pgjdbc-parent-poms.git</developerConnection>
-    </scm>
+      <tag>REL1.0.0</tag>
+  </scm>
 
 </project>

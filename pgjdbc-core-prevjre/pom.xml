@@ -3,7 +3,7 @@
     <parent>
         <groupId>org.postgresql</groupId>
         <artifactId>pgjdbc-core-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <relativePath>../pgjdbc-core-parent</relativePath>
     </parent>
 
@@ -54,7 +54,7 @@
                                 </goals>
                                 <configuration>
                                     <skip>true</skip>
-                                    <rules/>
+                                    <rules />
                                 </configuration>
                             </execution>
                         </executions>

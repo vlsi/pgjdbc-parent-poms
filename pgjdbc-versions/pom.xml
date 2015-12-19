@@ -5,7 +5,7 @@
     <artifactId>pgjdbc-versions</artifactId>
     <packaging>pom</packaging>
     <name>PostgreSQL JDBC Driver - superpom</name>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <description>Sets up base plugin configuration and dependency versions</description>
     <url>https://github.com/pgjdbc/pgjdbc-parent-poms</url>
 
@@ -49,7 +49,8 @@
         <url>https://github.com/pgjdbc/pgjdbc-parent-poms</url>
         <connection>scm:git:https://github.com/pgjdbc/pgjdbc-parent-poms.git</connection>
         <developerConnection>scm:git:git@github.com:pgjdbc/pgjdbc-parent-poms.git</developerConnection>
-    </scm>
+      <tag>REL1.0.0</tag>
+  </scm>
 
     <distributionManagement>
         <snapshotRepository>
@@ -405,16 +406,16 @@
                                 <phase>generate-sources</phase>
                                 <configuration>
                                     <target>
-                                        <echo message="Generating ${unzip.jdk.ant.build.xml}"/>
+                                        <echo message="Generating ${unzip.jdk.ant.build.xml}" />
                                         <!-- No one knows how to generate file with literal "${java.home}" content, so
                                              we generate @{java.home}, and replace @ -> $ later.
                                              ${java.home} should be resolved by Ant, not Maven -->
                                         <echoxml file="${unzip.jdk.ant.build.xml}">
                                             <project>
-                                                <unzip src="@{java.home}/../src.zip" dest="@{project.build.directory}/jdk-src"/>
+                                                <unzip src="@{java.home}/../src.zip" dest="@{project.build.directory}/jdk-src" />
                                             </project>
                                         </echoxml>
-                                        <replace file="${unzip.jdk.ant.build.xml}" token="@" value="$"/>
+                                        <replace file="${unzip.jdk.ant.build.xml}" token="@" value="$" />
                                     </target>
                                 </configuration>
                             </execution>
