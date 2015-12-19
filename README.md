@@ -56,9 +56,19 @@ To commit updates to version in `pom.xml` files and create a tag, issue:
 
     mvn release:clean release:prepare
 
-To release the version to maven central, issue:
+To stage the version to maven central, issue:
 
     mvn release:release
+
+As staging completes, close staging repository (you need to take staging repository id from `release:release` step):
+
+    mvn nexus-staging:close -DstagingRepositoryId=orgpostgresql-1082
+
+This will open staging repository for smoke testing access at https://oss.sonatype.org/content/repositories/orgpostgresql-1082/
+
+If staged artifacts look fine, release it
+
+    mvn nexus-staging:release -DstagingRepositoryId=orgpostgresql-1082
 
 ## Dependencies
 
