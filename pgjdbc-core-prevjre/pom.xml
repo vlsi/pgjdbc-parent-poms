@@ -138,6 +138,8 @@
                                         <argument>update</argument>
                                         <argument>--init</argument>
                                         <argument>--recursive</argument>
+                                        <argument>--depth</argument>
+                                        <argument>50</argument>
                                     </arguments>
                                 </configuration>
                                 <goals>
