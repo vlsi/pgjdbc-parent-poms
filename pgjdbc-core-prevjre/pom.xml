@@ -77,14 +77,17 @@
         </profile>
 
         <profile>
+            <!-- If pgjdbc-jreX is cloned under pgjdbc, then just use its sources.
+            It enables fast change-compile-test turnaround. However, for release purposes, submodule is used. -->
             <id>clone-in-submodule</id>
             <activation>
                 <file>
-                    <exists>pgjdbc/pgjdbc/src/assembly/dist.xml</exists>
+                    <missing>../pgjdbc/src/assembly/dist.xml</missing>
                 </file>
             </activation>
             <properties>
                 <pgjdbc.clone.location>pgjdbc</pgjdbc.clone.location>
+                <build.properties.relative.path>${pgjdbc.clone.location}</build.properties.relative.path>
             </properties>
         </profile>
 
