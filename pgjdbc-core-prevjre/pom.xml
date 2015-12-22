@@ -141,8 +141,11 @@
                                         <argument>update</argument>
                                         <argument>--init</argument>
                                         <argument>--recursive</argument>
-                                        <argument>--depth</argument>
-                                        <argument>50</argument>
+                                        <!-- It is assumed prev-jre release would be performed from
+                                             .../code/pgjdbc/core-jre7/target/checkout, thus 3 '..'s to eliminate
+                                             fetch from github and reuse git data of the main clone -->
+                                        <argument>--reference</argument>
+                                        <argument>../../..</argument>
                                     </arguments>
                                 </configuration>
                                 <goals>
