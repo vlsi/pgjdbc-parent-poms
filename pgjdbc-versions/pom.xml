@@ -308,8 +308,6 @@
                     <configuration>
                         <serverId>ossrh</serverId>
                         <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                        <!-- Need to keep staging open for subsequent jre6 and jre7 deployment -->
-                        <skipStagingRepositoryClose>true</skipStagingRepositoryClose>
                     </configuration>
                 </plugin>
                 <plugin>
