@@ -359,11 +359,6 @@
                 -->
             </dependency>
             <dependency>
-                <groupId>xml-resolver</groupId>
-                <artifactId>xml-resolver</artifactId>
-                <version>1.2</version>
-            </dependency>
-            <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.core</artifactId>
                 <version>4.3.1</version>
