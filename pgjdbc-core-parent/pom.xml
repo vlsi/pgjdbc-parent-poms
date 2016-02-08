@@ -194,7 +194,7 @@
                                 </Bundle-Name>
                                 <Bundle-Copyright>Copyright (c) 2003-2015, PostgreSQL Global Development Group
                                 </Bundle-Copyright>
-                                <Require-Capability>osgi.ee;filter:="(&amp;(|(osgi.ee=J2SE)(osgi.ee=JavaSE))(version&gt;=${java.specification.version}))"</Require-Capability>
+                                <Require-Capability>osgi.ee;filter:="(&amp;(|(osgi.ee=J2SE)(osgi.ee=JavaSE))(version&gt;=${javac.target}))"</Require-Capability>
                             </instructions>
                         </configuration>
                     </plugin>
