@@ -29,27 +29,57 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.enterprise</artifactId>
-            <scope>provided</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <scope>provided</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>com.github.dblock.waffle</groupId>
-            <artifactId>waffle-jna</artifactId>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
     </dependencies>
 
     <profiles>
+        <profile>
+            <id>waffle-deps</id>
+            <activation>
+                <property>
+                    <name>waffleEnabled</name>
+                    <value>!false</value>
+                </property>
+            </activation>
+            <properties>
+                <waffleEnabled>true</waffleEnabled>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>com.github.dblock.waffle</groupId>
+                    <artifactId>waffle-jna</artifactId>
+                    <scope>compile</scope>
+                    <optional>true</optional>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <id>osgi-deps</id>
+            <activation>
+                <property>
+                    <name>osgiEnabled</name>
+                    <value>!false</value>
+                </property>
+            </activation>
+            <properties>
+                <osgiEnabled>true</osgiEnabled>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>org.osgi</groupId>
+                    <artifactId>org.osgi.enterprise</artifactId>
+                    <scope>provided</scope>
+                    <optional>true</optional>
+                </dependency>
+                <dependency>
+                    <groupId>org.osgi</groupId>
+                    <artifactId>org.osgi.core</artifactId>
+                    <scope>provided</scope>
+                    <optional>true</optional>
+                </dependency>
+            </dependencies>
+        </profile>
+
         <profile>
             <id>release-artifacts</id>
             <build>
