@@ -15,7 +15,6 @@
     <properties>
         <template.default.pg.port>5432</template.default.pg.port>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <waffle-jna.version>1.7</waffle-jna.version>
         <postgresql.jdbc.spec>JDBC${jdbc.specification.version}</postgresql.jdbc.spec>
         <postgresql.enforce.jdk.version>1.8</postgresql.enforce.jdk.version>
         <javac.target>1.8</javac.target>
