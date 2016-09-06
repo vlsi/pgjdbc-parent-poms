@@ -72,6 +72,7 @@
         <postgresql.jdbc.spec>JDBC${jdbc.specification.version}</postgresql.jdbc.spec>
         <postgresql.driver.fullversion>PostgreSQL ${postgresql.jdbc.spec}</postgresql.driver.fullversion>
         <postgresql.preprocessed.sources.directory>${project.build.directory}/gen-src</postgresql.preprocessed.sources.directory>
+        <postgresql.preprocessed.test.sources.directory>${project.build.directory}/gen-test-src</postgresql.preprocessed.test.sources.directory>
         <unzip.jdk.ant.build.xml>${project.build.directory}/unzip-jdk-ant.xml</unzip.jdk.ant.build.xml>
         <skip.unzip-jdk-src>true</skip.unzip-jdk-src>
         <!-- Configuration for maven-surefire-plugin. Needs to be here for compatibility with jacoco -->
@@ -97,6 +98,20 @@
                                  and produces lots of "duplicate class" errors -->
                                 <destination>${postgresql.preprocessed.sources.directory}</destination>
                                 <compareDestination>true</compareDestination>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>preprocessTestSources</id>
+                            <phase>generate-test-sources</phase>
+                            <goals>
+                                <goal>preprocess</goal>
+                            </goals>
+                            <configuration>
+                                <!-- generated-sources is not used, otherwise IDEA picks sources from both src and generated-sources,
+                                 and produces lots of "duplicate class" errors -->
+                                <testDestination>${postgresql.preprocessed.test.sources.directory}</testDestination>
+                                <compareDestination>true</compareDestination>
+                                <useTestSources>true</useTestSources>
                             </configuration>
                         </execution>
                     </executions>
