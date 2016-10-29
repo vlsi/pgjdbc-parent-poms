@@ -28,6 +28,11 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>se.jiderhamn</groupId>
+            <artifactId>classloader-leak-test-framework</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <profiles>
