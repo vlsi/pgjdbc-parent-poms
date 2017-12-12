@@ -229,6 +229,7 @@
                                 <Bundle-Copyright>Copyright (c) 2003-2015, PostgreSQL Global Development Group
                                 </Bundle-Copyright>
                                 <Require-Capability>osgi.ee;filter:="(&amp;(|(osgi.ee=J2SE)(osgi.ee=JavaSE))(version&gt;=${javac.target}))"</Require-Capability>
+                                <Provide-Capability>osgi.service;effective:=active;objectClass=org.osgi.service.jdbc.DataSourceFactory</Provide-Capability>
                             </instructions>
                         </configuration>
                     </plugin>
