@@ -19,4 +19,7 @@ ssh-add ./github_deploy
 
 cd ..
 
-mvn -B -DpushChanges=false --settings settings.xml release:prepare release:perform
+set -x
+# -Darguments here is for maven-release-plugin
+MVN_SETTINGS=$(pwd)/settings.xml
+mvn -X -B -DpushChanges=false --settings settings.xml -Darguments="--settings ${MVN_SETTINGS}" release:prepare release:perform
