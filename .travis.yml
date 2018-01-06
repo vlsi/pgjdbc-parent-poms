@@ -13,6 +13,14 @@ before_cache:
   # No sense in caching current build artifacts
   rm -rf $HOME/.m2/repository/org/postgresql
 
+before_install:
+  - test -d "${JDK6_HOME}" || export JDK6_HOME=$(jdk_switcher home openjdk6)
+  - test -d "${JDK7_HOME}" || export JDK7_HOME=$(jdk_switcher home openjdk7)
+  - test -d "${JDK8_HOME}" || export JDK8_HOME=$(jdk_switcher home oraclejdk8)
+  - test -d "${JDK9_HOME}" || export JDK9_HOME=$(jdk_switcher home oraclejdk9)
+  - test -d "${JDK9_HOME}" || export JDK9_HOME=$(jdk_switcher home oraclejdk8) # JDK9 missing on precise, fallback to JDK8
+  - envsubst < .travis/toolchains.xml > ~/.m2/toolchains.xml
+
 cache:
   directories:
     - '$HOME/.m2/repository'

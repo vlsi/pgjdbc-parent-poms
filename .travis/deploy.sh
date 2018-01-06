@@ -22,4 +22,6 @@ cd ..
 set -x
 # -Darguments here is for maven-release-plugin
 MVN_SETTINGS=$(pwd)/settings.xml
-mvn -X -B -DpushChanges=false --settings settings.xml -Darguments="--settings ${MVN_SETTINGS}" release:prepare release:perform
+mvn -B -DpushChanges=false --settings settings.xml -Darguments="--settings ${MVN_SETTINGS}" release:prepare
+git push --tags
+mvn -B -DpushChanges=false --settings settings.xml -Darguments="--settings ${MVN_SETTINGS}" release:perform
