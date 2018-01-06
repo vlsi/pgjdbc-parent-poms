@@ -19,4 +19,4 @@ ssh-add ./github_deploy
 
 cd ..
 
-mvn -B -DpushChanges=false release:prepare release:perform
+mvn -B -DpushChanges=false --settings settings.xml release:prepare release:perform
