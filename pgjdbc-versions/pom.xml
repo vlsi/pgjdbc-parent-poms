@@ -46,9 +46,9 @@
 
     <!-- If inherited from parent pom, maven tries to add artifactId to URLs -->
     <scm>
-        <url>https://github.com/pgjdbc/pgjdbc-parent-poms</url>
-        <connection>scm:git:https://github.com/pgjdbc/pgjdbc-parent-poms.git</connection>
-        <developerConnection>scm:git:git@github.com:pgjdbc/pgjdbc-parent-poms.git</developerConnection>
+        <url>https://github.com/vlsi/pgjdbc-parent-poms</url>
+        <connection>scm:git:https://github.com/vlsi/pgjdbc-parent-poms.git</connection>
+        <developerConnection>scm:git:git@github.com:vlsi/pgjdbc-parent-poms.git</developerConnection>
       <tag>HEAD</tag>
   </scm>
 
