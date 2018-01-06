@@ -3,10 +3,11 @@ language: java
 jdk:
   - oraclejdk8
 
-env:
-  global:
-    - secure: "RyEaEKa8dqco4MmEiEx7ka4c/QXYRHJQKVAyO2c9riDHlGQEp1gvlvO+62leZOOKiJhGARbSwbZN2kKdG22V0Hu49tEW1TKEdcZ+F0s9SrCf8QdEMzLAWQePIojZvzS67ggEAPPS5xmLujpWT1eyhXz93qJz08ShgTX0eLhgw8VE1/6+ucgPNK9KHDppYcgKfY2uOwp+2mwj+ltcWT/az3ky6TM4TTxhyNE2pSIKYBpxe3Ga3Hd31MzNolhsdzZvL1pPexEpUt+4Ps4SRXotUjmkM1zS8/pbQZ6HC1dGj0AVUbeyUVKEaoV9lhMFFT7PKSktAjw9FNpS1F6NsPbvQvBqt42k05QWwu1OoJQixFsPWb0klW7I7YQyHHUZexh0wQPf7drlw+kho4CXPFLbERMVw1X4TSyOalUuoBcKaiH8ZQL2rVYf9bMVF7YIw9aUfvPYYWLbboDRd3ln1TPiGywCGShWg6ubKB7ZxEtYQr23JHbWM2VlF3ddOwrRa1++L8ut/9yV2aj/WOT8Al/SiMYQ/4bhQSEQlTrpPRsj//ECltfyRHoWxVR9jWhRhz0VbrYueNGHZ9dR4d1t0VkydyfqWHSk1KGW34YYm86zAL0NnXxrK/Irck5K7STRs3oK9UEYVcbO1Pd45mWx+y/mdD8TRg318rqlEb4WJ5rWrF4="
-    - secure: "Il4G1ShT8971ThTwTHwrZHuV/XTwIufe4ZBcj7t+LSclikXxgsDPY83GSDeMVBihn6ZLDkT3V0PvTRT6XqwOprrSeBvAGng+nR4/iazZfrxcMHqLUQzu6w6UQLT5LT+L8ofRC8hFeRhcf704gtaIn44BI5IlKAFBqacYymEEFWC3W9FpvrYKAXvmhnmmIg5A/JGiTbGjENcV3evaENPBYbGtI8d80cqWfofg+RodJzgFBzslw4dtuiwWJWMHmWzRQi/6M53tx8OmJyd7YavInXc9KaaJvwcF2n/9AzF26tSlzKu9I3V01+k0wWVvXnMsC/PYP4Kx6MboRwoDNm2firOF0oI/HB6fs4Wvg/IjBo0JFnqwmypJerWicZ6SKWo6l0oplJg3FrX18UjsJqCnjxCXJjgavcLooOR+omVvvdK9Nt4eGo/K5YVemOmi45FlAiO9omVo1E5yEemg27ArQC9x+J7W6ISXAT9E5VotBFWt/Bl+bhnkf5OO/y51x2jIIETZ4QVIpSXFFcWvkemefjnwrg30I+ud4HchQUbAA2MVDFSYFC18D88p9aVXcVbXKAjEzm1LxcErdQ5e4AOu1Eajj/EFDUpol9dvESQKgFqhWr8ykmsxKi/K+izziF0CKEGwQJfzT5Dze+QkqJ3TAt57BEdKr0ckTEkawrYvdUo="
+stages:
+  - name: test
+    if: not branch =~ ^release.*$
+  - name: publish
+    if: branch =~ ^release.*$
 
 before_cache:
   # No sense in caching current build artifacts
@@ -15,6 +16,11 @@ before_cache:
 cache:
   directories:
     - '$HOME/.m2/repository'
+
+matrix:
+  include:
+    - stage: publish
+      script: .travis/deploy.sh
 
 # Deploy snapshots to Maven Central
 after_success:
