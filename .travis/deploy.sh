@@ -10,4 +10,4 @@ chmod 600 .travis/github_deploy
 eval `ssh-agent -s`
 ssh-add .travis/github_deploy
 
-mvn -B release:prepare release:perform
+mvn -B -DpushChanges=false release:prepare release:perform
