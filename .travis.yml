@@ -20,6 +20,7 @@ cache:
 matrix:
   include:
     - stage: publish
+      install: true # skip mvn install
       script: .travis/deploy.sh
 
 # Deploy snapshots to Maven Central
