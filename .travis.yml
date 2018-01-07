@@ -5,9 +5,9 @@ jdk:
 
 stages:
   - name: test
-    if: not branch =~ ^release.*$
+    if: not branch =~ ^release/.*$ AND not branch =~ ^tmp/.*$
   - name: publish
-    if: branch =~ ^release.*$
+    if: branch =~ ^release/.*$ AND not branch =~ ^tmp/.*$
 
 before_cache:
   # No sense in caching current build artifacts
@@ -27,6 +27,7 @@ cache:
 
 matrix:
   include:
+    - stage: test
     - stage: publish
       install: true # skip mvn install
       script: .travis/deploy.sh
