@@ -50,6 +50,27 @@ Git repository typically contains -SNAPSHOT versions, so you can use the followi
 
 ## Releasing a new version
 
+### Release via Travis
+
+To release a branch via Travis, perform the following:
+
+TL;DR:
+
+    git checkout -B release/master origin/master
+    git push origin release/master
+
+1. Check if `pom.xml` includes proper `-SNAPSHOT` versions (release versions would be the ones without `-SNAPSHOT`)
+1. Check if there are `RELx.y.z` tags left behind from unsuccessful release attempts
+1. Push `release/master` branch to pointing to the commit you want to release
+
+    Travis would build new version, create a tag, update `pom.xml` to the next snapshot versions, and update `master` branch accordingly.
+
+    Note: the artifacts will not be visible in Maven Central before you manually release them.
+
+1. Navigate to [Sonatype Nexus Repository Manager](https://oss.sonatype.org/#stagingRepositories), find staging `orgpostgresql` repository there and release it
+
+### Manual release
+
 Procedure:
 
 To commit updates to version in `pom.xml` files and create a tag, issue:
@@ -65,6 +86,13 @@ This will open staging repository for smoke testing access at https://oss.sonaty
 If staged artifacts look fine, release it
 
     mvn nexus-staging:release -DstagingRepositoryId=orgpostgresql-1082
+
+### In case release fails
+
+In case release fails, the following cleanup is required:
+
+1. Git tags. For instance: `git push origin :RELx.y.z`
+1. Drop staging repository (if exists). Navigate to [Sonatype Nexus Repository Manager](https://oss.sonatype.org/#stagingRepositories), find staging `orgpostgresql` repository there and drop it
 
 ## Dependencies
 
