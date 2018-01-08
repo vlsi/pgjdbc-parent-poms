@@ -37,6 +37,8 @@ git checkout -b "$TMP_BRANCH"
 
 # Remove tmp branch if exists
 git push git@github.com:$TRAVIS_REPO_SLUG.git ":$TMP_BRANCH" || true
+# Remove release tag if exists just in case
+git push git@github.com:$TRAVIS_REPO_SLUG.git :$RELEASE_TAG || true
 
 set -x
 # -Darguments here is for maven-release-plugin
