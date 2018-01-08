@@ -186,6 +186,35 @@
                         <artifactId>jcp</artifactId>
                     </plugin>
                     <plugin>
+                        <!-- These executions will be overriden in pgjdbc-jreX to delete source directories.
+                             It avoids the hassle of adding the excludes of jre8 to all the sources/javadoc/compile/etc Maven plugins -->
+                        <artifactId>maven-clean-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>remove-future-jre-sources</id>
+                                <goals>
+                                    <goal>clean</goal>
+                                </goals>
+                                <phase>generate-sources</phase>
+                                <configuration>
+                                    <!-- Do not delete target folder -->
+                                    <excludeDefaultDirectories>true</excludeDefaultDirectories>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>remove-future-jre-test-sources</id>
+                                <goals>
+                                    <goal>clean</goal>
+                                </goals>
+                                <phase>generate-test-sources</phase>
+                                <configuration>
+                                    <!-- Do not delete target folder -->
+                                    <excludeDefaultDirectories>true</excludeDefaultDirectories>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration combine.children="append">
