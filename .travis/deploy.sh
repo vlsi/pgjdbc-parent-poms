@@ -35,12 +35,18 @@ git config --global user.email "pgsql-jdbc@postgresql.org"
 TMP_BRANCH=tmp/$TRAVIS_BRANCH
 git checkout -b "$TMP_BRANCH"
 
+set -x
+
 # Remove tmp branch if exists
 git push git@github.com:$TRAVIS_REPO_SLUG.git ":$TMP_BRANCH" || true
+
+CURRENT_VERSION=$(mvn -B -N org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -v '\[')
+RELEASE_VERSION=${CURRENT_VERSION/-SNAPSHOT}
+RELEASE_TAG=REL$RELEASE_VERSION
+
 # Remove release tag if exists just in case
 git push git@github.com:$TRAVIS_REPO_SLUG.git :$RELEASE_TAG || true
 
-set -x
 # -Darguments here is for maven-release-plugin
 MVN_SETTINGS=$(pwd)/.travis/settings.xml
 mvn -B --settings .travis/settings.xml -Darguments="--settings '${MVN_SETTINGS}'" release:prepare release:perform
