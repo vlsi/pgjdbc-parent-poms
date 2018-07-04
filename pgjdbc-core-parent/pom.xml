@@ -280,6 +280,7 @@
                                         <placement>X</placement>
                                     </tag>
                                 </tags>
+                                <failOnWarnings>true</failOnWarnings>
                             </configuration>
                         </plugin>
                     </plugins>
