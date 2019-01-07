@@ -68,7 +68,7 @@
     <properties>
         <template.default.pg.port>5432</template.default.pg.port>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <waffle-jna.version>1.7.5</waffle-jna.version>
+        <waffle-jna.version>1.9.1</waffle-jna.version>
         <postgresql.jdbc.spec>JDBC${jdbc.specification.version}</postgresql.jdbc.spec>
         <postgresql.driver.fullversion>PostgreSQL ${postgresql.jdbc.spec}</postgresql.driver.fullversion>
         <postgresql.preprocessed.sources.directory>${project.build.directory}/gen-src</postgresql.preprocessed.sources.directory>
@@ -354,7 +354,7 @@
                 <version>4.12</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dblock.waffle</groupId>
+                <groupId>com.github.waffle</groupId>
                 <artifactId>waffle-jna</artifactId>
                 <version>${waffle-jna.version}</version>
                 <!--

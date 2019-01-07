@@ -49,7 +49,7 @@
             </properties>
             <dependencies>
                 <dependency>
-                    <groupId>com.github.dblock.waffle</groupId>
+                    <groupId>com.github.waffle</groupId>
                     <artifactId>waffle-jna</artifactId>
                     <scope>compile</scope>
                     <optional>true</optional>
