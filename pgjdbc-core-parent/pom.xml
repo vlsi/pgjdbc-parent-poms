@@ -248,7 +248,7 @@
                         <configuration>
                             <instructions>
                                 <Export-Package>org.postgresql*; version=${parsedVersion.osgiVersion}</Export-Package>
-                                <Import-Package>javax.sql, javax.transaction.xa, javax.naming, *;resolution:=optional
+                                <Import-Package>javax.sql, javax.transaction.xa, javax.naming, javax.security.sasl, *;resolution:=optional
                                 </Import-Package>
                                 <Bundle-Activator>org.postgresql.osgi.PGBundleActivator</Bundle-Activator>
                                 <Bundle-SymbolicName>org.postgresql.jdbc${jdbc.specification.version.nodot}
