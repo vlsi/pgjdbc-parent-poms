@@ -1,10 +1,18 @@
 <img src="http://developer.postgresql.org/~josh/graphics/logos/elephant-64.png" />
+
+# ARCHIVAL NOTICE
+
+The repository is archived, and it is **no longer used**.
+
 # Parent poms for PostgreSQL JDBC driver
+
 
 [![Build Status](https://travis-ci.org/pgjdbc/pgjdbc-parent-poms.png)](https://travis-ci.org/pgjdbc/pgjdbc-parent-poms)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.postgresql/pgjdbc-versions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.postgresql/pgjdbc-versions)
 
-This repository includes maven parent poms that are used by PostgreSQL JDBC driver.
+This repository includes Maven parent poms that are were by PostgreSQL JDBC driver REL9.4.1207..REL42.2.12.
+
+As pgjdbc switched to Gradle, this repository is no longer used.
 
 ## Info
 
